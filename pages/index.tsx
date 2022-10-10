@@ -28,7 +28,7 @@ export default function Home() {
 
     const handleDeleteAddress = (address) => {
         const copyAddresses = [...addresses];
-        const filteredAddresses = copyAddresses.filter((id) => id === address)
+        const filteredAddresses = copyAddresses.filter((id) => id !== address)
         setAddresses(filteredAddresses)
     }
 
@@ -62,7 +62,7 @@ export default function Home() {
 
                     <form onSubmit={handleSubmit} className={styles.newAddressInputForm}>
                         <label>Add a new address</label>
-                            <input type="text" className={styles.newAddressInput} onChange={handleAddressInput}/>
+                            <input type="text" value={newAddressInput} className={styles.newAddressInput} onChange={handleAddressInput}/>
                         <button className={styles.newAddressBtn} onClick={handleAddingNewAddress}>Add</button>
 
                     </form>

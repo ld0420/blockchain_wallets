@@ -22,7 +22,6 @@ export const AddressPage = () => {
     const fetchData = () => {
         if (id) {
             const balanceUrl = `https://blockchain.info/balance?active=${id}`
-            const transactionsUrl = `https://blockchain.info/rawaddr/${id}`
 
             return fetch(balanceUrl).then((response) => {
                     return response.json();
